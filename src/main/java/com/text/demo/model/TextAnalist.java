@@ -1,11 +1,17 @@
 package com.text.demo.model;
 
-public class TextAnalist {
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
+@Document
+public class TextAnalist {
+    private String id;
     private String mostFreqWord;
-    private Integer avgParagraphSize;
-    private Long avgParagrahProcessingTime;
+    private Double avgParagraphSize;
+    private Double avgParagrahProcessingTime;
     private Long processingTime;
+    private Date date;
 
     public String getMostFreqWord() {
         return mostFreqWord;
@@ -15,19 +21,19 @@ public class TextAnalist {
         this.mostFreqWord = mostFreqWord;
     }
 
-    public Integer getAvgParagraphSize() {
+    public Double getAvgParagraphSize() {
         return avgParagraphSize;
     }
 
-    public void setAvgParagraphSize(Integer avgParagraphSize) {
+    public void setAvgParagraphSize(Double avgParagraphSize) {
         this.avgParagraphSize = avgParagraphSize;
     }
 
-    public Long getAvgParagrahProcessingTime() {
+    public Double getAvgParagrahProcessingTime() {
         return avgParagrahProcessingTime;
     }
 
-    public void setAvgParagrahProcessingTime(Long avgParagrahProcessingTime) {
+    public void setAvgParagrahProcessingTime(Double avgParagrahProcessingTime) {
         this.avgParagrahProcessingTime = avgParagrahProcessingTime;
     }
 
@@ -42,7 +48,23 @@ public class TextAnalist {
     public TextAnalist() {
     }
 
-    public TextAnalist(String mostFreqWord, Integer avgParagraphSize, Long avgParagrahProcessingTime, Long processingTime) {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public TextAnalist(String mostFreqWord, Double avgParagraphSize, Double avgParagrahProcessingTime, Long processingTime) {
         this.mostFreqWord = mostFreqWord;
         this.avgParagraphSize = avgParagraphSize;
         this.avgParagrahProcessingTime = avgParagrahProcessingTime;

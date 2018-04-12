@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -23,8 +24,13 @@ public class Controller {
 
     @RequestMapping(value = "/text/p_start/{p_start}/p_end/{p_end}/w_count_min/{w_count_min}/w_count_max/{w_count_max}",
             method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ParagraphAnalyst getTextAnalyst(@PathVariable Integer p_start, @PathVariable Integer p_end, @PathVariable Integer w_count_min,
+    public TextAnalist getTextAnalyst(@PathVariable Integer p_start, @PathVariable Integer p_end, @PathVariable Integer w_count_min,
                                            @PathVariable Integer w_count_max){
         return textService.getTextAnalyst(p_start, p_end, w_count_min, w_count_max);
+    }
+
+    @RequestMapping(value = "/history", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<TextAnalist> getHistory(){
+        return textService.getHistory();
     }
 }

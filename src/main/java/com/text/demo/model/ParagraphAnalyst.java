@@ -4,16 +4,16 @@ import java.util.Map;
 
 public class ParagraphAnalyst {
 
-    private String word;
+    private Map<String,Integer> words;
     private Double length;
     private Long time;
 
-    public String getWord() {
-        return word;
+    public Map<String,Integer> getWords() {
+        return words;
     }
 
-    public void setWord(String word) {
-        this.word = word;
+    public void setWords(Map<String,Integer> words) {
+        this.words = words;
     }
 
     public Double getLength() {
@@ -32,8 +32,8 @@ public class ParagraphAnalyst {
         this.time = time;
     }
 
-    public ParagraphAnalyst(String word, Double length, Long time) {
-        this.word = word;
+    public ParagraphAnalyst(Map<String,Integer> words, Double length, Long time) {
+        this.words = words;
         this.length = length;
         this.time = time;
     }
