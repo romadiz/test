@@ -51,6 +51,8 @@ public class TextService {
         });
         Boolean finish = false;
         while(!finish){
+            threads.stream();
+
             for(Thread thread:threads){
                 if(thread.isAlive()){
                     finish = false;
